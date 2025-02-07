@@ -1,67 +1,63 @@
-<HTML>
-    <HEAD>
-        <link rel="stylesheet" href="style.css">
-        
-        <TITLE>
-            BHAVAN'S BHAGWANDAS PUROHIT VIDYA MANDIR TRIMURTI NAGAR NAGPUR
-        </TITLE>
-    </HEAD>
-    <BODY>
-        <CENTER>
-        <BR>
-            <H1 colour = "white">
-                WELCOME TO OUR WEBSITE
-            </H1>
-            <HR>
-                <BR>
-            <H2>
-                NOTE :- THIS IS JUST A PROTOTYPE
-            </H2>
-            <BR>
-                <HR>
-                <div id="special" class="hide">
-                <section>
-                    <BR>
-                    <h1>PLEASE ENTER YOUR PERSONAL INFORMATION</h1>
-                    <label for="example name">Enter your name:</label>
-                        <BR>
-                    <input type="text" id="name" placeholder="Your Name">
-                            <BR>
-                                <button onclick="validateInput()">Submit</button>
-                </section>
-                    
-                    <HR>
-                        <br>
-                        <br>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BHAVAN'S BHAGWANDAS PUROHIT VIDYA MANDIR TRIMURTI NAGAR NAGPUR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="text-align: center;">
+        <h1 style="color: white;">WELCOME TO OUR WEBSITE</h1>
+        <hr>
+        <h2>NOTE: THIS IS JUST A PROTOTYPE</h2>
+        <hr>
 
-                        <section id="special-section" class="hidden">
-                            <img src="WIN_20250206_13_27_22_Pro.jpg" alt="Profile Picture" height="200" breadth="160">
-                            <table>
-                                <h3>
-                                <tr>
-                                    <th>Full Name:</th>
-                                    <td>Divyam Sharma</td>
-                                </tr>
-                                <tr>
-                                    <th>Age:</th>
-                                    <td>14</td>
-                                </tr>
-                                <tr>
-                                    <th>Email:</th>
-                                    <td>rajnidivyam@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <th>Location:</th>
-                                    <td>SONAKUNJ, Plot no.43, janhit co-op society, zade layout, pragati nagar , jaitala road, nagpur, maharashtra,440036</td>
-                                </tr>
-                                <tr>
-                                    <th>Blood-Group :</th>
-                                    <td>AB+</td>
-                                </tr>
-                                </h3>
-                            </table>
-                        </section>
-                    </div>
-                        <script src="script.js"></script>
-        </CENTER>
-    </BODY>
+        <div id="special" class="hide">
+            <section>
+                <h1>PLEASE ENTER YOUR PERSONAL INFORMATION</h1>
+                <label for="name">Enter your name:</label>
+                <br>
+                <input type="text" id="name" placeholder="Your Name">
+                <br>
+                <button onclick="validateInput()">Submit</button>
+                <p id="error-message"></p> <!-- Added for displaying messages -->
+            </section>
+            <hr>
+
+            <section id="special-section" class="hidden" style="display: none;">
+                <img src="WIN_20250206_13_27_22_Pro.jpg" alt="Profile Picture" height="200" width="160">
+                <table border="1" align="center">
+                    <tr><th>Full Name:</th><td>Divyam Sharma</td></tr>
+                    <tr><th>Age:</th><td>14</td></tr>
+                    <tr><th>Email:</th><td>rajnidivyam@gmail.com</td></tr>
+                    <tr><th>Location:</th><td>SONAKUNJ, Plot no.43, Janhit Co-op Society, Zade Layout, Pragati Nagar, Jaitala Road, Nagpur, Maharashtra, 440036</td></tr>
+                    <tr><th>Blood Group:</th><td>AB+</td></tr>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <!-- Inline JavaScript -->
+    <script>
+        function validateInput() {
+            let nameInput = document.getElementById("name").value.trim().toLowerCase();
+            let errorMessage = document.getElementById("error-message");
+            let specialSection = document.getElementById("special-section");
+
+            if (!errorMessage) {
+                console.error("Error: 'error-message' element is missing.");
+                return;
+            }
+
+            if (nameInput === "divyam sharma") {
+                errorMessage.textContent = "Welcome, Divyam Sharma!";
+                errorMessage.style.color = "green";
+                specialSection.style.display = "block"; // Show section
+            } else {
+                errorMessage.textContent = "Access Denied!";
+                errorMessage.style.color = "red";
+                specialSection.style.display = "none"; // Hide section
+            }
+        }
+    </script>
+</body>
+</html>
